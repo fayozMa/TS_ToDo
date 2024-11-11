@@ -67,7 +67,7 @@ function App() {
               </div>
             ))
           ) : (
-            <div className="text-center text-gray-500">No tasks added yet</div>
+            <div className="text-center text-gray-500">mashqlar githubda exercise fayli ichida</div>
           )}
         </div>
 
