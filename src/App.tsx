@@ -17,14 +17,21 @@ function App() {
 
   const handleAdd = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const form = e.target as HTMLFormElement;
+
+    const title = (form.elements.namedItem("title") as HTMLInputElement).value;
+    const date = (form.elements.namedItem("date") as HTMLInputElement).value;
+
     const newData: Task = {
-      title: form[0].value,
-      date: form[1].value,
+      title: title,
+      date: date,
     };
+
     const updatedData = [...data, newData];
     setData(updatedData);
     localStorage.setItem("data", JSON.stringify(updatedData));
+
     form.reset();
   };
 
@@ -67,7 +74,9 @@ function App() {
               </div>
             ))
           ) : (
-            <div className="text-center text-gray-500">mashqlar githubda exercise fayli ichida</div>
+            <div className="text-center text-gray-500">
+              mashqlar githubda exercise fayli ichida
+            </div>
           )}
         </div>
 
